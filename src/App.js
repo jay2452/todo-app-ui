@@ -35,7 +35,6 @@ function App() {
   const [todosLocal, setTodosLocal] = React.useState(null);
   const [tabValue, setTabValue] = React.useState(0);
   const [searchFieldValue, setSearchFieldValue] = React.useState("");
-  const [todoCount, setTodoCount] = React.useState(-1);
 
   React.useEffect(() => {
     dispatch(getTodoListAPI());
@@ -63,15 +62,13 @@ function App() {
 
   React.useEffect(() => {
     setTodosLocal(todos);
-  }, [todos && todos.length, todoCount]);
+  }, [todos && todos.length]);
 
   React.useEffect(() => {
     searchTasks(searchFieldValue);
   }, [searchFieldValue]);
 
   const saveTodoHandler = (todoItem) => {
-    const updatedCount = todoCount + 1;
-    setTodoCount(updatedCount);
     dispatch(saveTodo(todoItem));
   };
 
