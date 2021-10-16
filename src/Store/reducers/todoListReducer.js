@@ -76,6 +76,7 @@ export default function (state = INITIAL_STATE, action = {}) {
         task.dueDate = dueDate;
         task.priority = priority;
       }
+      updatedState.todos = [...updatedState.todos];
     }
     break;
 
