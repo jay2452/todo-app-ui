@@ -28,14 +28,17 @@ export default function (state = INITIAL_STATE, action = {}) {
       {
         const { title, description, priority, dueDate } = action.values;
         const length = updatedState.todos.length;
-        updatedState.todos.push({
-          id: length + 1,
-          title,
-          description,
-          priority,
-          dueDate,
-          currentState: "open",
-        });
+        updatedState.todos = [
+          ...updatedState.todos,
+          {
+            id: length + 1,
+            title,
+            description,
+            priority,
+            dueDate,
+            currentState: "open",
+          },
+        ];
       }
       break;
     case DELETE_TODO:
