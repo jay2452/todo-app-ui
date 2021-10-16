@@ -3,13 +3,12 @@ import {
   AccordionDetails,
   AccordionSummary,
   Checkbox,
-  CircularProgress,
   IconButton,
   Tooltip,
   Typography,
 } from "@mui/material";
 import React from "react";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { makeStyles } from "@mui/styles";
 import { Delete, Edit } from "@mui/icons-material";
@@ -131,17 +130,4 @@ const TodoListTable = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    // todos: state.todos.todos,
-  };
-};
-const options = {
-  pure: false,
-};
-export default connect(
-  mapStateToProps,
-  undefined,
-  undefined,
-  options
-)(TodoListTable);
+export default TodoListTable
